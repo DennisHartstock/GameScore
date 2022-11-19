@@ -1,7 +1,9 @@
 package com.example.gamescore;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         tvScore1 = findViewById(R.id.tvScore1);
         tvScore2 = findViewById(R.id.tvScore2);
+        Button btNextActivity = findViewById(R.id.btNextActivity);
 
         updateScore1();
         updateScore2();
@@ -43,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
             score2++;
             updateScore2();
         });
+
+        btNextActivity.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+            startActivity(intent);
+        });
     }
 
     @Override
@@ -52,9 +60,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("MainActivity", "onResume called");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("MainActivity", "onPause called");
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
         Log.d("MainActivity", "onStop called");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("MainActivity", "onRestart called");
     }
 
     private void updateScore1() {

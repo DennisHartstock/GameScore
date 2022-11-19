@@ -53,15 +53,26 @@
         android:id="@+id/tvScore2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="16dp"
         android:background="@android:color/holo_blue_dark"
+        android:padding="16dp"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="24sp"
-        tools:text="0"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvScore1"
-        app:layout_constraintTop_toBottomOf="@+id/tvTeam2" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTeam2"
+        tools:text="0" />
+
+    <Button
+        android:id="@+id/btNextActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/to_next_activity"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvScore2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
